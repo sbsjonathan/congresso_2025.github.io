@@ -1,0 +1,63 @@
+/* Fonte e estrutura geral */
+body {
+    font-family: "Noto Sans", Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Container centralizado */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1.title {
+    color: #008080;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Texto abaixo do título */
+p.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilização do menu de seleção dos dias */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaço maior entre os botões */
+    margin-top: 20px;
+}
+
+/* Botões dos dias */
+.btn {
+    display: block;
+    width: 220px;
+    text-align: center;
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
