@@ -1,12 +1,14 @@
 /* Fonte e estrutura geral */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 body {
-    font-family: "Noto Sans", Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     text-align: left;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    font-size: 16px; /* Ajustado para se aproximar mais da imagem */
-    line-height: 1.5; /* Ajustado para melhor espaçamento */
+    font-size: 16px;
+    line-height: 1.6; /* Aumentei um pouco o espaçamento entre as linhas */
 }
 
 /* Container centralizado */
@@ -31,15 +33,15 @@ h1.title {
 .subtitle {
     font-size: 17px;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Títulos das seções "Manhã" e "Tarde" */
 h2.section-title {
-    color: #008080;
+    color: #66a080; /* Tom de verde mais claro */
     font-size: 20px;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 8px;
 }
 
@@ -51,14 +53,15 @@ h2.section-title {
 
 /* Estilo dos itens da programação */
 .schedule li {
-    margin: 8px 0;
+    margin: 12px 0; /* Aumentei o espaçamento entre os temas */
     font-size: 16px;
     color: #333;
 }
 
-/* Negrito apenas nos textos que realmente estão assim na imagem */
+/* Negrito colorido para títulos em maiúsculas */
 .bold {
     font-weight: bold;
+    color: #006666; /* Tom de verde escuro */
 }
 
 /* Itálico apenas onde realmente aparece */
@@ -66,7 +69,7 @@ h2.section-title {
     font-style: italic;
 }
 
-/* Ajuste para os subtítulos dentro da programação (por exemplo, "VÍDEO PRINCIPAL") */
+/* Ajuste para os subtítulos dentro da programação */
 .program-highlight {
     font-weight: bold;
     color: #222;
@@ -74,28 +77,19 @@ h2.section-title {
 
 /* Ajustando os subtítulos específicos que precisam de cor */
 .program-highlight.blue {
-    color: #007bff;
+    color: #004488; /* Azul mais escuro */
 }
 
 .program-highlight.green {
     color: #008080;
 }
 
-/* Estilização dos links (caso queira usar no futuro) */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 /* Listas secundárias (como os discursos com marcadores) */
 .sub-list {
-    padding-left: 20px;
+    padding-left: 25px; /* Recuo natural dos bullet points */
     list-style-type: disc;
     font-size: 16px;
+    margin-top: 10px; /* Aumenta o espaço entre os bullet points */
 }
 
 /* Botão de voltar */
