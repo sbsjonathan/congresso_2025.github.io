@@ -1,11 +1,13 @@
+/* Fonte Padrão */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Noto Sans", Arial, sans-serif;
     text-align: left;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
 }
 
+/* Container centralizado */
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -15,48 +17,62 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Título principal (Sexta-feira) */
 h1.title {
     color: #008080;
     font-size: 24px;
+    font-weight: bold;
 }
 
+/* Versículo abaixo do título */
 .subtitle {
     font-size: 18px;
     color: #666;
 }
 
+/* Títulos das seções "Manhã" e "Tarde" */
 h2.section-title {
     color: #008080;
     font-size: 20px;
+    font-weight: bold;
 }
 
+/* Lista de eventos */
 .schedule {
     list-style-type: none;
     padding-left: 0;
 }
 
+/* Itens da programação */
 .schedule li {
     margin: 10px 0;
+    font-size: 16px;
 }
 
+/* Negrito para discursos e vídeos */
 .bold {
     font-weight: bold;
 }
 
+/* Estilização dos links */
 a {
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
+/* Listas aninhadas (discursos com marcadores) */
 .sub-list {
     padding-left: 20px;
     list-style-type: disc;
+    font-size: 16px;
 }
 
+/* Botão de voltar */
 .voltar {
     display: block;
     margin-top: 20px;
@@ -66,6 +82,7 @@ a:hover {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    font-weight: bold;
 }
 
 .voltar:hover {
