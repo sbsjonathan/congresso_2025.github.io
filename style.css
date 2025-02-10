@@ -1,11 +1,15 @@
+/* Fonte e estrutura geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Noto Sans", Arial, sans-serif;
     text-align: left;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    font-size: 16px; /* Ajustado para se aproximar mais da imagem */
+    line-height: 1.5; /* Ajustado para melhor espaçamento */
 }
 
+/* Container centralizado */
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -15,34 +19,69 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Título principal (Sexta-feira) */
 h1.title {
     color: #008080;
     font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
+/* Versículo abaixo do título */
 .subtitle {
-    font-size: 18px;
+    font-size: 17px;
     color: #666;
+    margin-bottom: 15px;
 }
 
+/* Títulos das seções "Manhã" e "Tarde" */
 h2.section-title {
     color: #008080;
     font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 8px;
 }
 
+/* Lista da programação */
 .schedule {
     list-style-type: none;
     padding-left: 0;
 }
 
+/* Estilo dos itens da programação */
 .schedule li {
-    margin: 10px 0;
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
 }
 
+/* Negrito apenas nos textos que realmente estão assim na imagem */
 .bold {
     font-weight: bold;
 }
 
+/* Itálico apenas onde realmente aparece */
+.italic {
+    font-style: italic;
+}
+
+/* Ajuste para os subtítulos dentro da programação (por exemplo, "VÍDEO PRINCIPAL") */
+.program-highlight {
+    font-weight: bold;
+    color: #222;
+}
+
+/* Ajustando os subtítulos específicos que precisam de cor */
+.program-highlight.blue {
+    color: #007bff;
+}
+
+.program-highlight.green {
+    color: #008080;
+}
+
+/* Estilização dos links (caso queira usar no futuro) */
 a {
     color: #007bff;
     text-decoration: none;
@@ -52,11 +91,14 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Listas secundárias (como os discursos com marcadores) */
 .sub-list {
     padding-left: 20px;
     list-style-type: disc;
+    font-size: 16px;
 }
 
+/* Botão de voltar */
 .voltar {
     display: block;
     margin-top: 20px;
@@ -66,6 +108,7 @@ a:hover {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    font-weight: bold;
 }
 
 .voltar:hover {
