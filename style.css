@@ -8,12 +8,12 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    line-height: 1.6; /* Aumentei um pouco o espaçamento entre as linhas */
+    line-height: 1.6; /* Ajustado para um espaçamento mais confortável */
 }
 
 /* Container centralizado */
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -53,7 +53,7 @@ h2.section-title {
 
 /* Estilo dos itens da programação */
 .schedule li {
-    margin: 12px 0; /* Aumentei o espaçamento entre os temas */
+    margin: 14px 0; /* Espaçamento aumentado para parecer com o projeto antigo */
     font-size: 16px;
     color: #333;
 }
@@ -64,32 +64,46 @@ h2.section-title {
     color: #006666; /* Tom de verde escuro */
 }
 
-/* Itálico apenas onde realmente aparece */
-.italic {
-    font-style: italic;
-}
-
-/* Ajuste para os subtítulos dentro da programação */
-.program-highlight {
-    font-weight: bold;
-    color: #222;
-}
-
-/* Ajustando os subtítulos específicos que precisam de cor */
-.program-highlight.blue {
-    color: #004488; /* Azul mais escuro */
-}
-
-.program-highlight.green {
-    color: #008080;
-}
-
-/* Listas secundárias (como os discursos com marcadores) */
+/* Estilo dos bullet points */
 .sub-list {
     padding-left: 25px; /* Recuo natural dos bullet points */
     list-style-type: disc;
     font-size: 16px;
-    margin-top: 10px; /* Aumenta o espaço entre os bullet points */
+    margin-top: 10px; /* Espaço entre os bullet points */
+}
+
+/* Ajuste de espaçamento dentro dos bullets */
+.sub-list li {
+    margin-bottom: 8px; /* Dá um espaço entre os itens */
+}
+
+/* Caixa de texto expansível */
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden; /* Se quiser barras de rolagem quando exceder tamanho, troque p/ auto */
+    margin: 8px 0 10px;
+    display: none;
+    height: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Texto clicável para expandir textarea */
+.clickable {
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* Botão de voltar */
