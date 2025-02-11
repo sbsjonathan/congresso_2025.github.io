@@ -1,6 +1,7 @@
-/* Fonte e estrutura geral */
+/* Importando a fonte Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+/* Estilização Geral */
 body {
     font-family: "Open Sans", Arial, sans-serif;
     text-align: left;
@@ -8,10 +9,10 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    line-height: 1.6; /* Ajustado para um espaçamento mais confortável */
+    line-height: 1.6;
 }
 
-/* Container centralizado */
+/* Container Centralizado */
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -21,71 +22,103 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Título principal (Sexta-feira) */
-h1.title {
-    color: #008080;
-    font-size: 24px;
+/* H1 - Título principal (Sexta-feira, Sábado, Domingo) */
+h1 {
+    font-size: 2.5rem;
     font-weight: bold;
+    text-align: center;
     margin-bottom: 10px;
 }
 
-/* Versículo abaixo do título */
-.subtitle {
-    font-size: 17px;
-    color: #666;
-    margin-bottom: 20px;
+/* H2 - Texto bíblico tema do dia */
+h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-/* Títulos das seções "Manhã" e "Tarde" */
-h2.section-title {
-    color: #66a080; /* Tom de verde mais claro */
-    font-size: 20px;
+/* H3 - Declaração do período do dia (Manhã/Tarde) */
+h3 {
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 8px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #66a080;
 }
 
-/* Lista da programação */
-.schedule {
+/* H4 - Tema do discurso */
+h4 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+/* Para destacar horário dentro do H4 */
+h4 strong {
+    font-weight: bold;
+    color: #006666;
+}
+
+/* Estilo do texto bíblico dentro do H4 */
+h4 span.biblico {
+    color: #1a73e8;
+    font-weight: normal;
+}
+
+/* H5 - Bullets (Lista de tópicos) */
+h5 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Estilização da lista */
+ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-/* Estilo dos itens da programação */
+/* Estilização dos Itens da Programação */
 .schedule li {
-    margin: 14px 0; /* Espaçamento aumentado para parecer com o projeto antigo */
+    margin: 14px 0;
     font-size: 16px;
     color: #333;
 }
 
-/* Negrito colorido para títulos em maiúsculas */
-.bold {
-    font-weight: bold;
-    color: #006666; /* Tom de verde escuro */
-}
-
-/* Estilo dos bullet points */
+/* Espaçamento natural dos bullet points */
 .sub-list {
-    padding-left: 25px; /* Recuo natural dos bullet points */
+    padding-left: 25px;
     list-style-type: disc;
     font-size: 16px;
-    margin-top: 10px; /* Espaço entre os bullet points */
+    margin-top: 10px;
 }
 
-/* Ajuste de espaçamento dentro dos bullets */
+/* Ajustando espaço entre bullets */
 .sub-list li {
-    margin-bottom: 8px; /* Dá um espaço entre os itens */
+    margin-bottom: 8px;
 }
 
-/* Caixa de texto expansível */
+/* Padrão: Negrito em preto */
+strong {
+    font-weight: bold;
+    color: black;
+}
+
+/* Estilização da Caixa de Texto Expansível */
 textarea {
     width: 100%;
     padding: 8px;
-    font-size: 16px; 
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
-    overflow: hidden; /* Se quiser barras de rolagem quando exceder tamanho, troque p/ auto */
+    overflow: hidden;
     margin: 8px 0 10px;
     display: none;
     height: auto;
@@ -106,7 +139,7 @@ textarea:focus {
     font-weight: bold;
 }
 
-/* Botão de voltar */
+/* Botão de Voltar */
 .voltar {
     display: block;
     margin-top: 20px;
