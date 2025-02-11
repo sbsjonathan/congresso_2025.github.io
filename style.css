@@ -26,7 +26,7 @@ body {
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
+    text-align: left; /* Agora está alinhado à esquerda */
     margin-bottom: 10px;
 }
 
@@ -35,7 +35,7 @@ h2 {
     font-size: 1.8rem;
     font-weight: normal;
     color: #1a73e8;
-    text-align: center;
+    text-align: left; /* Agora está alinhado à esquerda */
     margin-bottom: 15px;
 }
 
@@ -43,7 +43,7 @@ h2 {
 h3 {
     font-size: 1.8rem;
     font-weight: bold;
-    text-align: left;
+    text-align: left; /* Agora está alinhado à esquerda */
     margin-top: 25px;
     margin-bottom: 10px;
     color: #66a080;
@@ -53,6 +53,7 @@ h3 {
 h4 {
     font-size: 1.5rem;
     font-weight: normal;
+    text-align: left; /* Agora está alinhado à esquerda */
     margin-top: 10px;
     margin-bottom: 8px;
     color: #222;
@@ -61,7 +62,6 @@ h4 {
 /* Para destacar horário dentro do H4 */
 h4 strong {
     font-weight: bold;
-    color: #006666;
 }
 
 /* Estilo do texto bíblico dentro do H4 */
@@ -74,6 +74,7 @@ h4 span.biblico {
 h5 {
     font-size: 1.2rem;
     font-weight: normal;
+    text-align: left; /* Agora está alinhado à esquerda */
     margin-left: 20px;
     margin-top: 5px;
 }
@@ -81,7 +82,7 @@ h5 {
 /* Estilização da lista */
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 20px; /* Afastando as listas da borda esquerda */
 }
 
 /* Estilização dos Itens da Programação */
@@ -93,7 +94,7 @@ ul {
 
 /* Espaçamento natural dos bullet points */
 .sub-list {
-    padding-left: 25px;
+    padding-left: 40px; /* Mais espaço para os bullets */
     list-style-type: disc;
     font-size: 16px;
     margin-top: 10px;
@@ -104,10 +105,10 @@ ul {
     margin-bottom: 8px;
 }
 
-/* Padrão: Negrito em preto */
+/* Padrão: Negrito em preto (se não for sobrescrito no HTML do dia) */
 strong {
     font-weight: bold;
-    color: black;
+    color: black !important; /* Força a cor preta, para ser substituída apenas no HTML do dia */
 }
 
 /* Estilização da Caixa de Texto Expansível */
