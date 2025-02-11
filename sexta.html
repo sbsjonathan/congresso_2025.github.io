@@ -5,119 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programação - Sexta-feira</title>
     <link rel="stylesheet" href="style.css">
-        <style>
+    
+    <!-- Personaliza a cor do negrito apenas nesta página -->
+    <style>
         strong {
-            color: #008000; /* Verde para sexta-feira */
+            color: #008000 !important; /* Verde para sexta-feira */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Sexta-feiri</h1>
-        <p class="subtitle">“Boas novas de uma grande alegria que todo o povo terá” — Lucas 2:10</p>
+        <h1 class="title">Sexta-feira</h1>
+        <h2>“Boas novas de uma grande alegria que todo o povo terá” — Lucas 2:10</h2>
 
-        <h2 class="section-title">Manhã</h2>
+        <h3>Manhã</h3>
         <ul class="schedule">
             <li><strong>9:20</strong> Vídeo musical</li>
             <li><strong>9:30</strong> Cântico 150 e oração</li>
             <li>
                 <div class="clickable" onclick="toggleTextarea('textarea940')">
-                    <span class="bold">9:40 DISCURSO DE ABERTURA:</span> Por que precisamos de boas novas?
+                    <strong>9:40 DISCURSO DE ABERTURA:</strong> Por que precisamos de boas novas?
                 </div>
                 <textarea id="textarea940" wrap="soft" oninput="saveText('textarea940')"></textarea>
             </li>
-            <li>
-                <div class="clickable" onclick="toggleTextarea('textarea1010')">
-                    <span class="bold">10:10 VÍDEO PRINCIPAL:</span> A História e o Ministério de Jesus: Episódio 1 <br> 
-                    A Verdadeira Luz do Mundo — Parte I
-                </div>
-                <textarea id="textarea1010" wrap="soft" oninput="saveText('textarea1010')"></textarea>
-            </li>
-            <li><strong>10:45</strong> Cântico 96 e anúncios</li>
-            <li>
-                <div class="clickable" onclick="toggleTextarea('textarea1055')">
-                    <span class="bold">10:55 SÉRIE DE DISCURSOS:</span> ‘Eles eram movidos por espírito santo’
-                </div>
-                <textarea id="textarea1055" wrap="soft" oninput="saveText('textarea1055')"></textarea>
-            </li>
-            <ul class="sub-list">
-                <li>Mateus</li>
-                <li>Marcos</li>
-                <li>Lucas</li>
-                <li>João</li>
-            </ul>
-            <li><strong>12:10</strong> Cântico 110 e intervalo</li>
         </ul>
 
-        <h2 class="section-title">Tarde</h2>
+        <h3>Tarde</h3>
         <ul class="schedule">
             <li><strong>1:35</strong> Vídeo musical</li>
             <li><strong>1:45</strong> Cântico 117</li>
             <li>
                 <div class="clickable" onclick="toggleTextarea('textarea150')">
-                    <span class="bold">1:50 SÉRIE DE DISCURSOS:</span> Acredite na verdade sobre Jesus
+                    <strong>1:50 SÉRIE DE DISCURSOS:</strong> Acredite na verdade sobre Jesus
                 </div>
                 <textarea id="textarea150" wrap="soft" oninput="saveText('textarea150')"></textarea>
             </li>
-            <ul class="sub-list">
-                <li>A Palavra</li>
-                <li>Seu nome</li>
-                <li>Seu nascimento</li>
-            </ul>
-            <li><strong>2:30</strong> Cântico 99 e anúncios</li>
-            <li>
-                <div class="clickable" onclick="toggleTextarea('textarea240')">
-                    <span class="bold">2:40 SÉRIE DE DISCURSOS:</span> Lições da terra de Jesus
-                </div>
-                <textarea id="textarea240" wrap="soft" oninput="saveText('textarea240')"></textarea>
-            </li>
-            <ul class="sub-list">
-                <li>Geografia</li>
-                <li>Vida animal</li>
-                <li>Alimentos</li>
-                <li>Casa e rotina familiar</li>
-                <li>Vida em comunidade</li>
-                <li>Educação</li>
-                <li>Adoração</li>
-            </ul>
-            <li><strong>4:15</strong> “Boas novas eternas” — O que significam?</li>
-            <li><strong>4:50</strong> Cântico 66 e oração final</li>
         </ul>
 
         <a href="index.html" class="voltar">← Voltar</a>
     </div>
 
     <script>
-        function autoResizeTextarea(element) {
-            element.style.height = 'auto';
-            element.style.height = element.scrollHeight + 'px';
-        }
-
         function toggleTextarea(id) {
             const textarea = document.getElementById(id);
             textarea.style.display = (textarea.style.display === 'block') ? 'none' : 'block';
-            if (textarea.style.display === 'block') {
-                autoResizeTextarea(textarea);
-            }
         }
 
         function saveText(id) {
-            const text = document.getElementById(id).value;
-            localStorage.setItem(id, text);
+            localStorage.setItem(id, document.getElementById(id).value);
         }
 
-        function loadSavedTexts() {
-            const textareas = document.querySelectorAll("textarea");
-            textareas.forEach(textarea => {
-                const savedText = localStorage.getItem(textarea.id);
-                if (savedText) {
-                    textarea.value = savedText;
-                    autoResizeTextarea(textarea);
-                }
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("textarea").forEach(textarea => {
+                textarea.value = localStorage.getItem(textarea.id) || "";
             });
-        }
-
-        document.addEventListener("DOMContentLoaded", loadSavedTexts);
+        });
     </script>
 </body>
 </html>
