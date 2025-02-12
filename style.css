@@ -20,15 +20,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     /*background-color: #f9f9f9; */
     margin: 20px;
-    font-size: 16px;
+    /*font-size: 16px;*/
     line-height: 1.6;
 }
 
 /* Container mantendo a estrutura original */
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Títulos Principais */
