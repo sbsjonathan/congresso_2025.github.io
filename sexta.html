@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programação - Sexta-feira</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Personaliza a cor do negrito apenas nesta página -->
-    <style>
-        strong {
-            color: #008000 !important; /* Verde para sexta-feira */
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Sexta-feira</h1>
-        <h2>“Boas novas de uma grande alegria que todo o povo terá” — Lucas 2:10</h2>
+        <!-- Título interativo -->
+        <h1 id="toggle-color-picker">Sexta-feira</h1>
+        
+        <!-- Paleta de cores oculta por padrão -->
+        <div class="color-picker-container" id="color-picker-container">
+            <label for="color-picker">Escolha a cor:</label>
+            <input type="color" id="color-picker" value="#008000">
+        </div>
+
+        <h2>“Boas novas de uma grande alegria que todo o povo terá” — <span class="biblia">Lucas 2:10</span></h2>
 
         <h3>Manhã</h3>
         <ul class="schedule">
@@ -30,25 +31,14 @@
             </li>
         </ul>
 
-        <h3>Tarde</h3>
-        <ul class="schedule">
-            <li><strong>1:35</strong> Vídeo musical</li>
-            <li><strong>1:45</strong> Cântico 117</li>
-            <li>
-                <div class="clickable" onclick="toggleTextarea('textarea150')">
-                    <strong>1:50 SÉRIE DE DISCURSOS:</strong> Acredite na verdade sobre Jesus
-                </div>
-                <textarea id="textarea150" wrap="soft" oninput="saveText('textarea150')"></textarea>
-            </li>
-        </ul>
-
         <a href="index.html" class="voltar">← Voltar</a>
     </div>
 
     <script>
+        // Exibir/ocultar caixa de anotações com animação
         function toggleTextarea(id) {
             const textarea = document.getElementById(id);
-            textarea.style.display = (textarea.style.display === 'block') ? 'none' : 'block';
+            textarea.classList.toggle("show");
         }
 
         function saveText(id) {
@@ -59,6 +49,19 @@
             document.querySelectorAll("textarea").forEach(textarea => {
                 textarea.value = localStorage.getItem(textarea.id) || "";
             });
+        });
+
+        // Captura os elementos para mudança de cor
+        const title = document.getElementById("toggle-color-picker");
+        const colorPickerContainer = document.getElementById("color-picker-container");
+        const colorPicker = document.getElementById("color-picker");
+
+        title.addEventListener("click", function() {
+            colorPickerContainer.classList.toggle("show-picker");
+        });
+
+        colorPicker.addEventListener("input", function() {
+            document.documentElement.style.setProperty("--highlight-color", this.value);
         });
     </script>
 </body>
