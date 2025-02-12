@@ -9,16 +9,12 @@
 <body>
     <div class="container">
         <!-- Título interativo -->
-        <h1 id="toggle-color-picker">Sexta-feire</h1>
+        <h1 id="toggle-menu">Sexta-feira</h1>
         
-        <!-- Ferramentas -->
-        <div class="tools-container">
-            <!-- Paleta de cores oculta por padrão -->
-            <div class="color-picker-container" id="color-picker-container">
-                <label for="color-picker">Cor:</label>
-                <input type="color" id="color-picker" value="#008000">
-            </div>
-            <!-- Botão de limpar cache -->
+        <!-- Menu ocultável -->
+        <div class="menu-container" id="menu-container">
+            <label for="color-picker">Cor:</label>
+            <input type="color" id="color-picker" value="#008000">
             <button id="clear-cache">Limpar Cache</button>
         </div>
 
@@ -55,13 +51,19 @@
             });
         });
 
-        // Ferramenta de cores
-        const title = document.getElementById("toggle-color-picker");
-        const colorPickerContainer = document.getElementById("color-picker-container");
-        const colorPicker = document.getElementById("color-picker");
+        // Exibir/Ocultar Menu
+        const title = document.getElementById("toggle-menu");
+        const menuContainer = document.getElementById("menu-container");
 
-        title.addEventListener("click", () => colorPickerContainer.classList.toggle("show-picker"));
-        colorPicker.addEventListener("input", () => document.documentElement.style.setProperty("--highlight-color", colorPicker.value));
+        title.addEventListener("click", () => {
+            menuContainer.classList.toggle("menu-visible");
+        });
+
+        // Mudança de cor
+        const colorPicker = document.getElementById("color-picker");
+        colorPicker.addEventListener("input", function() {
+            document.documentElement.style.setProperty("--highlight-color", this.value);
+        });
 
         // Limpar cache
         document.getElementById("clear-cache").addEventListener("click", () => {
