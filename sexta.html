@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Programação - Sexta-feira</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,48 +28,13 @@
                 <div class="clickable" onclick="toggleTextarea('textarea940')">
                     <strong>9:40 DISCURSO DE ABERTURA:</strong> Por que precisamos de boas novas?
                 </div>
-                <textarea id="textarea940" wrap="soft" oninput="saveText('textarea940')"></textarea>
+                <textarea id="textarea940" wrap="soft"></textarea>
             </li>
         </ul>
 
         <a href="index.html" class="voltar">← Voltar</a>
     </div>
 
-    <script>
-        function toggleTextarea(id) {
-            const textarea = document.getElementById(id);
-            textarea.classList.toggle("show");
-        }
-
-        function saveText(id) {
-            localStorage.setItem(id, document.getElementById(id).value);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll("textarea").forEach(textarea => {
-                textarea.value = localStorage.getItem(textarea.id) || "";
-            });
-        });
-
-        // Exibir/Ocultar Menu
-        const title = document.getElementById("toggle-menu");
-        const menuContainer = document.getElementById("menu-container");
-
-        title.addEventListener("click", () => {
-            menuContainer.classList.toggle("menu-visible");
-        });
-
-        // Mudança de cor
-        const colorPicker = document.getElementById("color-picker");
-        colorPicker.addEventListener("input", function() {
-            document.documentElement.style.setProperty("--highlight-color", this.value);
-        });
-
-        // Limpar cache
-        document.getElementById("clear-cache").addEventListener("click", () => {
-            localStorage.clear();
-            location.reload();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
