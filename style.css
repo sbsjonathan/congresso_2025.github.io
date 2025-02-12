@@ -26,9 +26,9 @@ body {
 
 /* Container mantendo a estrutura original */
 .container {
-    max-width: 700px;
+    max-width: 70px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 1px;
 }
 
 /* Títulos Principais */
