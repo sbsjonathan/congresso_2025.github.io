@@ -50,7 +50,8 @@ h2 {
     font-weight: normal;
     color: var(--text-gray);
     text-align: left;
-    margin-bottom: 10px;
+    line-height: 1.3;
+    margin-bottom: 5px;
 }
 
 h2 .biblia {
