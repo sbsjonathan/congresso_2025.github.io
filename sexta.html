@@ -1,200 +1,73 @@
-/* Importando a fonte Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação - Sexta-feira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Título interativo -->
+        <h1 id="toggle-color-picker">Sexta-feira</h1>
+        
+        <!-- Ferramentas -->
+        <div class="tools-container">
+            <!-- Paleta de cores oculta por padrão -->
+            <div class="color-picker-container" id="color-picker-container">
+                <label for="color-picker">Cor:</label>
+                <input type="color" id="color-picker" value="#008000">
+            </div>
+            <!-- Botão de limpar cache -->
+            <button id="clear-cache">Limpar Cache</button>
+        </div>
 
-/* Variáveis de cores */
-:root {
-    --highlight-color: #E07030; /* Cor padrão do negrito */
-    --biblia-color: #0055AA;
-    --text-gray: #666666;
-}
+        <h2>“Boas novas de uma grande alegria que todo o povo terá” — <span class="biblia">Lucas 2:10</span></h2>
 
-/* Reset de margens e paddings para manter o layout original */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        <h3>Manhã</h3>
+        <ul class="schedule">
+            <li><strong>9:20</strong> Vídeo musical</li>
+            <li><strong>9:30</strong> Cântico 150 e oração</li>
+            <li>
+                <div class="clickable" onclick="toggleTextarea('textarea940')">
+                    <strong>9:40 DISCURSO DE ABERTURA:</strong> Por que precisamos de boas novas?
+                </div>
+                <textarea id="textarea940" wrap="soft" oninput="saveText('textarea940')"></textarea>
+            </li>
+        </ul>
 
-/* Estilização Geral */
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f9f9f9;
-    margin: 20px;
-    font-size: 16px;
-    line-height: 1.6;
-}
+        <a href="index.html" class="voltar">← Voltar</a>
+    </div>
 
-/* Container mantendo a estrutura original */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+    <script>
+        function toggleTextarea(id) {
+            const textarea = document.getElementById(id);
+            textarea.classList.toggle("show");
+        }
 
-/* Títulos Principais */
-h1 {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: left;
-    color: var(--highlight-color);
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
+        function saveText(id) {
+            localStorage.setItem(id, document.getElementById(id).value);
+        }
 
-h1:hover {
-    transform: scale(1.05);
-}
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("textarea").forEach(textarea => {
+                textarea.value = localStorage.getItem(textarea.id) || "";
+            });
+        });
 
-h2 {
-    font-size: 1.3em;
-    font-weight: normal;
-    color: var(--text-gray);
-    text-align: left;
-    margin-bottom: 10px;
-}
+        // Ferramenta de cores
+        const title = document.getElementById("toggle-color-picker");
+        const colorPickerContainer = document.getElementById("color-picker-container");
+        const colorPicker = document.getElementById("color-picker");
 
-h2 .biblia {
-    color: var(--biblia-color);
-}
+        title.addEventListener("click", () => colorPickerContainer.classList.toggle("show-picker"));
+        colorPicker.addEventListener("input", () => document.documentElement.style.setProperty("--highlight-color", colorPicker.value));
 
-h3 {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: left;
-    color: var(--highlight-color);
-    margin-bottom: 8px;
-}
-
-/* Negrito com cor variável */
-strong {
-    font-weight: bold;
-    color: var(--highlight-color);
-}
-
-/* Textos bíblicos */
-.biblia {
-    color: var(--biblia-color);
-}
-
-/* Estilização da Lista */
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-/* Espaçamento natural dos bullet points */
-.sub-list {
-    padding-left: 30px;
-    list-style-type: disc;
-}
-
-/* Estilização da Caixa de Texto Expansível */
-textarea {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    overflow: hidden;
-    margin-top: 5px;
-    display: none;
-    height: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    
-    /* Animação para abrir suavemente */
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-textarea.show {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Texto clicável para expandir textarea */
-.clickable {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* Botão de Voltar */
-.voltar {
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    background: #ff5733;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.voltar:hover {
-    background: #c70000;
-}
-
-/* Estilizando a ferramenta de cores e botão de limpar cache */
-.tools-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-picker-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.4s ease-in-out, height 0.4s ease-in-out;
-}
-
-.color-picker-container label {
-    font-weight: bold;
-}
-
-#color-picker {
-    border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-/* Botão de limpar cache */
-#clear-cache {
-    padding: 8px 12px;
-    border: none;
-    background-color: #c70000;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-#clear-cache:hover {
-    background-color: #a00000;
-}
-
-/* Classe para exibir a ferramenta */
-.show-picker {
-    opacity: 1;
-    height: 50px;
-}
+        // Limpar cache
+        document.getElementById("clear-cache").addEventListener("click", () => {
+            localStorage.clear();
+            location.reload();
+        });
+    </script>
+</body>
+</html>
