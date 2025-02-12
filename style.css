@@ -110,8 +110,8 @@ textarea {
     
     /* Animação para abrir suavemente */
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1.95);
+    transition: opacity 1.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 textarea.show {
