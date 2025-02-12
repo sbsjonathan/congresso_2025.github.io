@@ -8,34 +8,36 @@
     --text-gray: #666666;
 }
 
+/* Reset de margens e paddings para manter o layout original */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilização Geral */
 body {
     font-family: 'Open Sans', sans-serif;
-    text-align: left;
     background-color: #f9f9f9;
     margin: 20px;
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* Container Centralizado */
+/* Container mantendo a estrutura original */
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Títulos Principais */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2em;
     font-weight: bold;
     text-align: left;
     color: var(--highlight-color);
     cursor: pointer;
-    margin-bottom: 5px;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -44,11 +46,11 @@ h1:hover {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.3em;
     font-weight: normal;
     color: var(--text-gray);
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 h2 .biblia {
@@ -56,12 +58,11 @@ h2 .biblia {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 1.5em;
     font-weight: bold;
     text-align: left;
     color: var(--highlight-color);
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* Negrito com cor variável */
@@ -85,24 +86,10 @@ ul li {
     margin-bottom: 8px;
 }
 
-/* Estilização dos Itens da Programação */
-.schedule li {
-    margin: 14px 0;
-    font-size: 16px;
-    color: #333;
-}
-
 /* Espaçamento natural dos bullet points */
 .sub-list {
-    padding-left: 40px;
+    padding-left: 30px;
     list-style-type: disc;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-/* Ajustando espaço entre bullets */
-.sub-list li {
-    margin-bottom: 8px;
 }
 
 /* Estilização da Caixa de Texto Expansível */
@@ -114,15 +101,17 @@ textarea {
     border-radius: 5px;
     resize: none;
     overflow: hidden;
-    margin: 8px 0 10px;
+    margin-top: 5px;
     display: none;
     height: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    
+    /* Animação para abrir suavemente */
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 textarea.show {
@@ -160,9 +149,15 @@ textarea:focus {
     background: #c70000;
 }
 
-/* Estilizando a ferramenta de cores */
-.color-picker-container {
+/* Estilizando a ferramenta de cores e botão de limpar cache */
+.tools-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-top: 10px;
+}
+
+.color-picker-container {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -181,6 +176,21 @@ textarea:focus {
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+
+/* Botão de limpar cache */
+#clear-cache {
+    padding: 8px 12px;
+    border: none;
+    background-color: #c70000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#clear-cache:hover {
+    background-color: #a00000;
 }
 
 /* Classe para exibir a ferramenta */
