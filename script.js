@@ -39,6 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // =======================
     // 🔹 4. Ajustar a Caixa de Anotações (Expande Automaticamente)
     // =======================
+
+function toggleTextarea(id) {
+    const textarea = document.getElementById(id);
+    
+    if (textarea) {
+        textarea.classList.toggle("show");
+
+        // Se estiver visível, já ajusta a altura automaticamente
+        if (textarea.classList.contains("show")) {
+            autoResize(textarea);
+        }
+    }
+}
+
+// Adiciona evento a todas as caixas de anotações clicáveis
+document.querySelectorAll(".clickable").forEach(element => {
+    element.addEventListener("click", function() {
+        const textareaId = this.getAttribute("data-textarea");
+        toggleTextarea(textareaId);
+    });
+});
+
     document.querySelectorAll("textarea").forEach(textarea => {
         textarea.value = localStorage.getItem(textarea.id) || "";
 
