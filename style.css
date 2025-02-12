@@ -1,13 +1,19 @@
 /* Importando a fonte Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+/* Variáveis de cores */
+:root {
+    --highlight-color: #E07030; /* Cor padrão do negrito */
+    --biblia-color: #0055AA;
+    --text-gray: #666666;
+}
+
 /* Estilização Geral */
 body {
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: left;
     background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -22,67 +28,61 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* H1 - Título principal (Sexta-feira, Sábado, Domingo) */
+/* Títulos Principais */
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: left; /* Agora está alinhado à esquerda */
-    margin-bottom: 10px;
+    text-align: left;
+    color: var(--highlight-color);
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* H2 - Texto bíblico tema do dia */
+h1:hover {
+    transform: scale(1.05);
+}
+
 h2 {
     font-size: 1.8rem;
     font-weight: normal;
-    color: #1a73e8;
-    text-align: left; /* Agora está alinhado à esquerda */
+    color: var(--text-gray);
+    text-align: left;
     margin-bottom: 15px;
 }
 
-/* H3 - Declaração do período do dia (Manhã/Tarde) */
+h2 .biblia {
+    color: var(--biblia-color);
+}
+
 h3 {
     font-size: 1.8rem;
     font-weight: bold;
-    text-align: left; /* Agora está alinhado à esquerda */
+    text-align: left;
+    color: var(--highlight-color);
     margin-top: 25px;
     margin-bottom: 10px;
-    color: #66a080;
 }
 
-/* H4 - Tema do discurso */
-h4 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    text-align: left; /* Agora está alinhado à esquerda */
-    margin-top: 10px;
-    margin-bottom: 8px;
-    color: #222;
-}
-
-/* Para destacar horário dentro do H4 */
-h4 strong {
+/* Negrito com cor variável */
+strong {
     font-weight: bold;
+    color: var(--highlight-color);
 }
 
-/* Estilo do texto bíblico dentro do H4 */
-h4 span.biblico {
-    color: #1a73e8;
-    font-weight: normal;
+/* Textos bíblicos */
+.biblia {
+    color: var(--biblia-color);
 }
 
-/* H5 - Bullets (Lista de tópicos) */
-h5 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    text-align: left; /* Agora está alinhado à esquerda */
-    margin-left: 20px;
-    margin-top: 5px;
-}
-
-/* Estilização da lista */
+/* Estilização da Lista */
 ul {
     list-style-type: none;
-    padding-left: 20px; /* Afastando as listas da borda esquerda */
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
 }
 
 /* Estilização dos Itens da Programação */
@@ -94,7 +94,7 @@ ul {
 
 /* Espaçamento natural dos bullet points */
 .sub-list {
-    padding-left: 40px; /* Mais espaço para os bullets */
+    padding-left: 40px;
     list-style-type: disc;
     font-size: 16px;
     margin-top: 10px;
@@ -103,12 +103,6 @@ ul {
 /* Ajustando espaço entre bullets */
 .sub-list li {
     margin-bottom: 8px;
-}
-
-/* Padrão: Negrito em preto (se não for sobrescrito no HTML do dia) */
-strong {
-    font-weight: bold;
-    color: black !important; /* Força a cor preta, para ser substituída apenas no HTML do dia */
 }
 
 /* Estilização da Caixa de Texto Expansível */
@@ -126,6 +120,15 @@ textarea {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+textarea.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
 }
 
 textarea:focus {
@@ -155,4 +158,33 @@ textarea:focus {
 
 .voltar:hover {
     background: #c70000;
+}
+
+/* Estilizando a ferramenta de cores */
+.color-picker-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.color-picker-container label {
+    font-weight: bold;
+}
+
+#color-picker {
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Classe para exibir a ferramenta */
+.show-picker {
+    opacity: 1;
+    height: 50px;
 }
