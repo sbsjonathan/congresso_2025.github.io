@@ -80,8 +80,8 @@ strong {
 
 /* Estilização da Lista */
 ul {
-    list-style-type: none;
-    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 ul li {
