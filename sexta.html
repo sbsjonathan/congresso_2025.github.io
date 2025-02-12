@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <!-- Título interativo -->
-        <h1 id="toggle-menu">Sexta-feire</h1>
+        <h1 id="toggle-menu">Sexta-feira</h1>
         
         <!-- Menu ocultável -->
         <div class="menu-container" id="menu-container">
@@ -25,16 +25,27 @@
             <li><strong>9:20</strong> Vídeo musical</li>
             <li><strong>9:30</strong> Cântico 150 e oração</li>
             <li>
-                <div class="clickable" onclick="toggleTextarea('textarea940')">
+                <div class="clickable" data-textarea="textarea940">
                     <strong>9:40 DISCURSO DE ABERTURA:</strong> Por que precisamos de boas novas?
                 </div>
                 <textarea id="textarea940" wrap="soft"></textarea>
             </li>
         </ul>
 
-        <a href="index.html" class="voltar">← Voltar</a>
-    </div>
+<!-- Navegação inferior -->
+<div class="bottom-nav">
+    <button class="nav-btn disabled">
+        <span class="arrow">←</span> Anterior
+    </button> <!-- Desativado na sexta -->
 
+    <a href="index.html" class="nav-btn home">Início</a>
+
+    <a href="sabado.html" class="nav-btn">
+        Próximo <span class="arrow">→</span>
+    </a>
+</div>
+
+       
     <script src="script.js"></script>
 </body>
 </html>
