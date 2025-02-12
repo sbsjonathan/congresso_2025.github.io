@@ -9,7 +9,7 @@
 }
 
 /* Reset de margens e paddings para manter o layout original */
-* {
+/* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
